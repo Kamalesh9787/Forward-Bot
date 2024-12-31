@@ -25,10 +25,10 @@ main_buttons = [[
 ],[
     InlineKeyboardButton('🤖 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url='https://t.me/ultrabotss')
 ],[
-    InlineKeyboardButton('👨‍💻 ʜᴇʟᴘ', callback_data='help'),
-    InlineKeyboardButton('💁 ᴀʙᴏᴜᴛ', callback_data='about')
+    InlineKeyboardButton('👨‍💻 𝐇𝐄𝐋𝐏', callback_data='help'),
+    InlineKeyboardButton('💁 𝐀𝐁𝐎𝐔𝐓', callback_data='about')
 ],[
-    InlineKeyboardButton('⚙ sᴇᴛᴛɪɴɢs', callback_data='settings#main')
+    InlineKeyboardButton('⚙ 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒', callback_data='settings#main')
 ]]
 
 # Don't Remove Credit Tg - @VJ_Botz
@@ -65,12 +65,12 @@ async def restart(client, message):
 @Client.on_callback_query(filters.regex(r'^help'))
 async def helpcb(bot, query):
     buttons = [[
-        InlineKeyboardButton('🤔 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ❓', callback_data='how_to_use')
+        InlineKeyboardButton('🤔 𝐇𝐎𝐖 𝐓𝐎 𝐔𝐒𝐄 ? ❓', callback_data='how_to_use')
     ],[
-        InlineKeyboardButton('Aʙᴏᴜᴛ ✨️', callback_data='about'),
-        InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='settings#main')
+        InlineKeyboardButton('𝐀𝐁𝐎𝐔𝐓 ✨️', callback_data='about'),
+        InlineKeyboardButton('⚙ 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒', callback_data='settings#main')
     ],[
-        InlineKeyboardButton('• back', callback_data='back')
+        InlineKeyboardButton('• 𝐁𝐀𝐂𝐊', callback_data='back')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(text=Script.HELP_TXT, reply_markup=reply_markup)
@@ -107,8 +107,8 @@ async def back(bot, query):
 @Client.on_callback_query(filters.regex(r'^about'))
 async def about(bot, query):
     buttons = [[
-         InlineKeyboardButton('• back', callback_data='help'),
-         InlineKeyboardButton('Stats ✨️', callback_data='status')
+         InlineKeyboardButton('• 𝐁𝐀𝐂𝐊', callback_data='help'),
+         InlineKeyboardButton('𝐒𝐓𝐀𝐓𝐒 ✨️', callback_data='status')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
@@ -127,8 +127,8 @@ async def status(bot, query):
     forwardings = await db.forwad_count()
     upt = await get_bot_uptime(START_TIME)
     buttons = [[
-        InlineKeyboardButton('• back', callback_data='help'),
-        InlineKeyboardButton('System Stats ✨️', callback_data='systm_sts'),
+        InlineKeyboardButton('• 𝐁𝐀𝐂𝐊', callback_data='help'),
+        InlineKeyboardButton('𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐒 ✨️', callback_data='systm_sts'),
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
@@ -143,7 +143,7 @@ async def status(bot, query):
 
 @Client.on_callback_query(filters.regex(r'^systm_sts'))
 async def sys_status(bot, query):
-    buttons = [[InlineKeyboardButton('• back', callback_data='help')]]
+    buttons = [[InlineKeyboardButton('• 𝐁𝐀𝐂𝐊', callback_data='help')]]
     ram = psutil.virtual_memory().percent
     cpu = psutil.cpu_percent()
     disk_usage = psutil.disk_usage('/')
